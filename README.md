@@ -1,3 +1,9 @@
-Created client folder for fronted code and server folder for backend code.
-Install ShadeCN UI and install npm.
-Install TailwindCSS.
+- Created a `client` folder for frontend code and a `server` folder for backend code.
+- Installed ShadCN UI and npm dependencies.
+- Installed Tailwind CSS for styling.
+- Created Signup and Login pages.
+- Used `useState` for managing state in Signup and Login pages.  
+- Using MongoDB as the database.
+- Set up backend configuration.
+- Installed necessary backend dependencies: express, mongoose, cors, dotenv, bcryptjs, jsonwebtoken, and nodemon.
+- Set up Redux Toolkit and RTK Query for state management and API handling.

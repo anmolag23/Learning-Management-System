@@ -17,7 +17,8 @@ import {
 } from "@/components/ui/tabs"
 import { useLoginUserMutation, useRegisterUserMutation } from "@/features/api/authApi"
 import { Loader2 } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 const Login = () => {
   const [signupInput, setSignupInput] = useState({name:"", email:"",password:""});
@@ -56,6 +57,30 @@ const Login = () => {
     const action = type === "signup" ? registerUser : loginUser;
     await action(inputData);
    };
+
+   useEffect(() => {
+      if(registerIsSuccess && registerData){
+        toast.success(registerData.message || "Signup successful.")
+      }
+      if(registerError){
+        toast.error(registerData.data.message || "Signup Failed");
+      }
+      if(loginError){
+        toast.error(loginData.data.message || "login Failed");
+      }
+      if(loginIsSuccess && loginData){
+        toast.success(loginData.message || "login successful.")
+      }
+    }, [
+      loginIsLoading,
+      registerIsLoading,
+      loginIsSuccess,
+      registerIsSuccess,
+      loginData,
+      registerData,
+      loginError,
+      registerError,
+   ]);
 
   
 

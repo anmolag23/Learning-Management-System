@@ -8,3 +8,5 @@
 - Installed necessary backend dependencies: express, mongoose, cors, dotenv, bcryptjs, jsonwebtoken, and nodemon.
 - Set up Redux Toolkit and RTK Query for state management and API handling.
 -Used Redux Toolkit to create a store and slice for handling user authentication state.
+-Developed the profile page frontend first, followed by implementing and integrating its backend functionality.
+-multer installation and setup.

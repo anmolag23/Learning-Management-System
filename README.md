@@ -10,3 +10,6 @@
 -Used Redux Toolkit to create a store and slice for handling user authentication state.
 -Developed the profile page frontend first, followed by implementing and integrating its backend functionality.
 -multer installation and setup.
+-profile m update k liye usestate and usevariable.
+-api integration for profilephoto using state variables , async-await.
+-profile updation - using usEffect, reftech

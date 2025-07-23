@@ -40,7 +40,9 @@ useEffect(() => {
 }, [isSuccess, isError, error, updateUserData]);
 
   if(isLoading) return <h1>Profile Loading...</h1> 
-  const { user } = data;
+  // if (isLoading || !data) return <h1>Profile Loading...</h1>;
+  // const { user } = data;
+  const user = data && data.user;
 
 
   return (

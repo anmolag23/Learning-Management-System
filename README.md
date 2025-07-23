@@ -13,3 +13,4 @@
 -profile m update k liye usestate and usevariable.
 -api integration for profilephoto using state variables , async-await.
 -profile updation - using usEffect, reftech
+-logout Implememntation and dispatch of data from loadUser and saving it in the reduxDevtools.

@@ -7,14 +7,16 @@
 - Set up backend configuration.
 - Installed necessary backend dependencies: express, mongoose, cors, dotenv, bcryptjs, jsonwebtoken, and nodemon.
 - Set up Redux Toolkit and RTK Query for state management and API handling.
--Used Redux Toolkit to create a store and slice for handling user authentication state.
--Developed the profile page frontend first, followed by implementing and integrating its backend functionality.
--multer installation and setup.
--profile m update k liye usestate and usevariable.
--api integration for profilephoto using state variables , async-await.
--profile updation - using usEffect, reftech
--logout Implementation and dispatch of data from loadUser and saving it in the reduxDevtools.
--Loading Spinner while refreshing.
--afeter logout making the user data null, so that no data remains after logging out.
--use of optional Chaining , so that whenever there is no data than it will return the manual data written in the code.
--creating blueprint for the course.
+- Used Redux Toolkit to create a store and slice for handling user authentication state.
+- Developed the profile page frontend first, followed by implementing and integrating its backend functionality.
+- multer installation and setup.
+- profile m update k liye usestate and usevariable.
+- api integration for profilephoto using state variables , async-await.
+- profile updation - using usEffect, reftech
+- logout Implementation and dispatch of data from loadUser and saving it in the reduxDevtools.
+- Loading Spinner while refreshing.
+- afeter logout making the user data null, so that no data remains after logging out.
+- use of optional Chaining , so that whenever there is no data than it will return the manual data written in the code.
+- creating blueprint for the course.
+- backend code for course.
+- creating the dashboard.

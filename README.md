@@ -13,4 +13,8 @@
 -profile m update k liye usestate and usevariable.
 -api integration for profilephoto using state variables , async-await.
 -profile updation - using usEffect, reftech
--logout Implememntation and dispatch of data from loadUser and saving it in the reduxDevtools.
+-logout Implementation and dispatch of data from loadUser and saving it in the reduxDevtools.
+-Loading Spinner while refreshing.
+-afeter logout making the user data null, so that no data remains after logging out.
+-use of optional Chaining , so that whenever there is no data than it will return the manual data written in the code.
+-creating blueprint for the course.

@@ -72,20 +72,21 @@ const Navbar = () => {
                     Log out
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
-                
-                  
+                {user.role === "instructor" && (
+                  <>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Dashboard</DropdownMenuItem>
-                  
-                
+                  </>
+                )}
+      
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
             <div className="flex items-center gap-2">
-              <Button variant="outline" >
+              <Button variant="outline" onClick={()=> navigate("/login")}>
                 Login
               </Button>
-              <Button >Signup</Button>
+              <Button onClick={()=> navigate("/login")}>Signup</Button>
             </div>
           )}
           <DarkMode/>

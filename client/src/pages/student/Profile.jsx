@@ -28,6 +28,10 @@ const Profile = () => {
     await updateUser(formData);
   };
 
+  useEffect(() => {
+    refetch();
+  },[]);
+
 useEffect(() => {
   if (isSuccess) {
     refetch();
@@ -52,7 +56,7 @@ useEffect(() => {
         <div className="flex flex-col items-center">
           <Avatar className="h-24 w-24 md:h-32 md:w-32 mb-4">
             <AvatarImage
-              src= {user.photoUrl || "https://github.com/shadcn.png"}
+              src= {user?.photoUrl || "https://github.com/shadcn.png"}
               alt="@shadcn"
             />
             <AvatarFallback>CN</AvatarFallback>

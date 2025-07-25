@@ -20,3 +20,6 @@
 - creating blueprint for the course.
 - backend code for course.
 - creating the dashboard.and course section , where a new course can be created by the instructor only.
+- used RichtextEditor and installed react quill.
+- Proper course creation created.
+- Now building api for the update course.

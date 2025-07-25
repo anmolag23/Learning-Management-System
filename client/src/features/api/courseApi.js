@@ -1,4 +1,4 @@
-// import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
+
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
@@ -41,7 +41,14 @@ export const courseApi = createApi({
                 url: `/${courseId}`,
                 method:"GET"
             })
+        }),
+        CreateLecture: builder.mutation({
+            query: ({lectureTitle, courseId}) => ({
+                url: `/${courseId}/lecture`,
+                method: "POST",
+                body:{lectureTitle}
+            })
         })
     }),
 });
-export const {useCreateCourseMutation, useGetCreatorCourseQuery,useEditCourseMutation,useGetCourseByIdQuery} = courseApi;
+export const {useCreateCourseMutation, useGetCreatorCourseQuery,useEditCourseMutation,useGetCourseByIdQuery, useCreateLectureMutation} = courseApi;

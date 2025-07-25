@@ -23,3 +23,4 @@
 - used RichtextEditor and installed react quill.
 - Proper course creation created.
 - Now building api for the update course.
+- lecture creation page. And creating its backend.

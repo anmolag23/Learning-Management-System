@@ -19,4 +19,4 @@
 - use of optional Chaining , so that whenever there is no data than it will return the manual data written in the code.
 - creating blueprint for the course.
 - backend code for course.
-- creating the dashboard.
+- creating the dashboard.and course section , where a new course can be created by the instructor only.

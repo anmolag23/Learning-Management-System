@@ -66,14 +66,14 @@ const Login = () => {
         toast.success(registerData.message || "Signup successful.")
       }
       if(registerError){
-        toast.error(registerError.data.message || "Signup Failed");
+        toast.error(registerError?.data?.message || "Signup Failed");
       }
        if(loginIsSuccess && loginData){
         toast.success(loginData.message || "login successful.");
         navigate("/");
       }
       if(loginError){
-        toast.error(loginError.data.message || "login Failed");
+        toast.error(loginError?.data?.message || "login Failed");
       }
     }, [
       loginIsLoading,

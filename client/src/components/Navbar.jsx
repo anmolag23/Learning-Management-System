@@ -7,7 +7,7 @@ import DarkMode from '@/DarkMode';
 import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
-import { Separator } from '@radix-ui/react-dropdown-menu';
+import { Separator } from '@/components/ui/separator';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLogoutUserMutation } from '@/features/api/authApi';
 import { toast } from 'sonner';

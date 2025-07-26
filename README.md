@@ -28,3 +28,4 @@
 - using axios.
 - we are fetching the published course which instructor has created.means now we are not using the static course.
 - course detail page .
+- complete payment intigration using stripe.

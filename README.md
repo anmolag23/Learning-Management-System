@@ -24,3 +24,5 @@
 - Proper course creation created.
 - Now building api for the update course.
 - lecture creation page. And creating its backend.
+- vedio upload.
+- using axios.

@@ -83,7 +83,7 @@ const LectureTab = () => {
     await editLecture({
       lectureTitle,
       videoInfo:uploadVideInfo,
-      isPreview:isFree,
+      isPreviewFree:isFree,
       courseId,
       lectureId,
     });

@@ -16,10 +16,17 @@ const PORT = process.env.PORT || 3000;
 //default middleware
 app.use(express.json());
 app.use(cookieParser());
+
+
 app.use(cors({
     origin:"http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     credentials:true
 }));
+
+
+
+
 
 //apis
 app.use("/api/v1/media",mediaRoute);

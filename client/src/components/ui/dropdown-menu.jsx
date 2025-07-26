@@ -16,11 +16,24 @@ function DropdownMenuPortal({
   return (<DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />);
 }
 
-function DropdownMenuTrigger({
-  ...props
-}) {
-  return (<DropdownMenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />);
-}
+// function DropdownMenuTrigger({
+//   ...props
+// }) {
+//   return (<DropdownMenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />);
+// }
+
+const DropdownMenuTrigger = React.forwardRef(({ ...props }, ref) => {
+  return (
+    <DropdownMenuPrimitive.Trigger
+      ref={ref}
+      data-slot="dropdown-menu-trigger"
+      {...props}
+    />
+  );
+});
+
+DropdownMenuTrigger.displayName = "DropdownMenuTrigger";
+
 
 function DropdownMenuContent({
   className,

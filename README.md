@@ -29,3 +29,4 @@
 - we are fetching the published course which instructor has created.means now we are not using the static course.
 - course detail page .
 - complete payment intigration using stripe.
+- complete course progress course . lectures can be watched and marked as completed and incompleted as per the view.

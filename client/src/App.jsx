@@ -16,6 +16,7 @@ import CreateLecture from './pages/admin/lecture/CreateLecture'
 import EditLecture from './pages/admin/lecture/EditLecture'
 import CourseDetail from './pages/student/CourseDetail'
 import CourseProgress from './pages/student/CourseProgress'
+import SearchPage from './pages/student/SearchPage'
 
 
 
@@ -47,6 +48,11 @@ const appRouter = createBrowserRouter([
       {
         path:"profile",
         element:<Profile/>
+
+      },
+       {
+        path:"course/search",
+        element:<SearchPage/>
 
       },
 

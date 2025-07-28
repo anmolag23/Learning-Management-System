@@ -12,7 +12,10 @@ const Courses = () => {
   return (
     <div className='bg-gray-50 dark:bg-[#141414]'>
         <div className='max-w-7xl mx-auto p-6'>
-            <h2 className='font-bold text-3xl text-center mb-10'>Our Courses</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-700 to-teal-600 drop-shadow-md">
+  Our Courses
+</h2>
+
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
         {
         isLoading ? (

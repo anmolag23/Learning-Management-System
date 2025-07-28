@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Menu, School} from 'lucide-react';
+import { GraduationCap, Menu, School} from 'lucide-react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { Button } from './ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -30,66 +30,99 @@ const Navbar = () => {
       }
     },[isSuccess])
   return (
-    <div className="h-16 dark:bg-[#020817] bg-white border-b dark:border-b-gray-800 border-b-gray-200 fixed top-0 left-0 right-0 duration-300 z-10">
+    // <div className="h-16 dark:bg-[#020817] bg-white border-b dark:border-b-gray-800 border-b-gray-200 fixed top-0 left-0 right-0 duration-300 z-10">
+    <div className="h-16 bg-white/80 dark:bg-[#020817] backdrop-blur-md shadow-sm border-b dark:border-b-gray-800 border-b-gray-200 fixed top-0 left-0 right-0 z-10 transition-all duration-300">
        {/* Desktop */}
       <div className="max-w-7xl mx-auto hidden md:flex justify-between items-center gap-10 h-full">
         <div className="flex items-center gap-2">
-          <School size={"30"} />
-          <Link to="/"> 
-            <h1 className="hidden md:block font-extrabold text-2xl">
-              E-Learning
-            </h1> 
-          </Link>
-            
-        </div>
+  <GraduationCap size={28} />
+  <Link to="/">
+    <h1 className="hidden md:block font-extrabold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-700 to-teal-600">
+       Learnix
+    </h1>
+  </Link>
+</div>
+
 
         {/* User icons and dark mode icon  */}
         <div className="flex items-center gap-8">
           {user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                {/* <Button variant="outline">Open</Button> */}
+      <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Avatar className="cursor-pointer border-2 border-blue-500 hover:scale-105 transition-all duration-300">
+          <AvatarImage
+            src={user?.photoUrl || "https://github.com/shadcn.png"}
+            alt="User"
+          />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </DropdownMenuTrigger>
 
-                <Avatar>
-                <AvatarImage src={user?.photoUrl || "https://github.com/shadcn.png"} />
-                <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuGroup>
-                  <DropdownMenuItem>
-                    <Link to="my-learning">
-                    My learning
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link to="profile">
-                    Edit Profile
-                    </Link>
-                    
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={logoutHandler}>
-                    Log out
-                  </DropdownMenuItem>
-                </DropdownMenuGroup>
-                {user?.role === "instructor" && (
-                  <>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem><Link to="/admin/dashboard">Dashboard</Link></DropdownMenuItem>
-                  </>
-                )}
-      
-              </DropdownMenuContent>
-            </DropdownMenu>
+      <DropdownMenuContent className="w-56 rounded-xl shadow-md bg-white dark:bg-[#0f172a] border dark:border-gray-700 p-1">
+        <DropdownMenuLabel className="font-semibold text-sm text-gray-800 dark:text-white px-3 py-2 border-b dark:border-b-gray-700">
+          My Account
+        </DropdownMenuLabel>
+
+        <DropdownMenuGroup className="text-sm text-gray-700 dark:text-gray-300">
+          <DropdownMenuItem asChild>
+            <Link
+              to="my-learning"
+              className="w-full px-3 py-2 hover:bg-blue-100 dark:hover:bg-white/10 rounded-md transition-all"
+            >
+              My learning
+            </Link>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem asChild>
+            <Link
+              to="profile"
+              className="w-full px-3 py-2 hover:bg-blue-100 dark:hover:bg-white/10 rounded-md transition-all"
+            >
+              Edit Profile
+            </Link>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem
+            onClick={logoutHandler}
+            className="w-full px-3 py-2 hover:bg-blue-100 dark:hover:bg-white/10 rounded-md transition-all"
+          >
+            Log out
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+
+        {user?.role === "instructor" && (
+          <>
+            <DropdownMenuSeparator className="my-1 dark:border-gray-700" />
+            <DropdownMenuItem asChild>
+              <Link
+                to="/admin/dashboard"
+                className="w-full px-3 py-2 hover:bg-blue-100 dark:hover:bg-white/10 rounded-md transition-all"
+              >
+                Dashboard
+              </Link>
+            </DropdownMenuItem>
+          </>
+        )}
+      </DropdownMenuContent>
+    </DropdownMenu>
           ) : (
             <div className="flex items-center gap-2">
-              <Button variant="outline" onClick={()=> navigate("/login")}>
-                Login
-              </Button>
-              <Button onClick={()=> navigate("/login")}>Signup</Button>
-            </div>
+  <Button
+    variant="outline"
+    className="border-blue-700 text-blue-700 hover:bg-blue-100 dark:hover:bg-slate-800 transition"
+    onClick={() => navigate("/login")}
+  >
+    Login
+  </Button>
+
+  <Button
+    className="bg-gradient-to-r from-blue-700 via-indigo-700 to-teal-600 text-white hover:brightness-110 transition"
+    onClick={() => navigate("/login")}
+  >
+    Sign Up
+  </Button>
+</div>
+
           )}
           <DarkMode/>
 
@@ -107,6 +140,17 @@ export default Navbar;
 
 const MobileNavbar = ({ user }) => {
   const navigate = useNavigate();
+   const [logoutUser,{data, isSuccess}] = useLogoutUserMutation();
+    const logoutHandler = async () => {
+      await logoutUser();
+    }
+
+    useEffect(()=>{
+      if(isSuccess){
+        toast.success(data.message || "user log out");
+        navigate("/login");
+      }
+    },[isSuccess])
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -130,7 +174,7 @@ const MobileNavbar = ({ user }) => {
           <nav className="flex flex-col space-y-4 text-base">
             <Link to="/my-learning">My Learning</Link>
             <Link to="/profile">Edit Profile</Link>
-            <p>Log out</p>
+            <Link onClick={logoutHandler}>Log Out</Link>
           </nav>
         </div>
 

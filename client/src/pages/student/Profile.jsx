@@ -44,55 +44,61 @@ useEffect(() => {
 }, [isSuccess, isError, error, updateUserData]);
 
   if(isLoading) return <h1>Profile Loading...</h1> 
-  // if (isLoading || !data) return <h1>Profile Loading...</h1>;
-  // const { user } = data;
   const user = data && data.user;
 
 
   return (
-     <div className="max-w-4xl mx-auto px-4 my-10">
-      <h1 className="font-bold text-2xl text-center md:text-left">PROFILE</h1>
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 my-5">
-        <div className="flex flex-col items-center">
-          <Avatar className="h-24 w-24 md:h-32 md:w-32 mb-4">
-            <AvatarImage
-              src= {user?.photoUrl || "https://github.com/shadcn.png"}
-              alt="@shadcn"
-            />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-        </div>
-        <div>
-         <div className="mb-2">
-            <h1 className="font-semibold text-gray-900 dark:text-gray-100 ">
-              Name:
-              <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
-                {user.name}
-              </span>
-            </h1>
-          </div>
+<div className="max-w-4xl mx-auto px-4 my-10">
+  <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-700 to-teal-600 drop-shadow-sm text-center md:text-left mb-8">
+    Profile
+  </h1>
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 my-5 bg-white/70 dark:bg-white/5 shadow-xl backdrop-blur-md rounded-xl p-6 transition-all duration-300">
+  <div className="flex flex-col items-center">
+    <Avatar className="h-24 w-24 md:h-32 md:w-32 mb-4">
+      <AvatarImage
+        src={user?.photoUrl || "https://github.com/shadcn.png"}
+        alt="@shadcn"
+      />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  </div>
 
-         <div className="mb-2">
-            <h1 className="font-semibold text-gray-900 dark:text-gray-100 ">
-              Email:
-              <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
-                 {user.email}
-              </span>
-            </h1>
-          </div>
-          <div className="mb-2">
-            <h1 className="font-semibold text-gray-900 dark:text-gray-100 ">
-              Role:
-              <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
-                {user.role.toUpperCase()}
-              </span>
-            </h1>
-          </div>
+  <div>
+    <div className="mb-2">
+      <h1 className="font-semibold text-gray-900 dark:text-gray-100">
+        Name:
+        <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
+          {user.name}
+        </span>
+      </h1>
+    </div>
+
+    <div className="mb-2">
+      <h1 className="font-semibold text-gray-900 dark:text-gray-100">
+        Email:
+        <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
+          {user.email}
+        </span>
+      </h1>
+    </div>
+
+    <div className="mb-2">
+      <h1 className="font-semibold text-gray-900 dark:text-gray-100">
+        Role:
+        <span className="font-normal text-gray-700 dark:text-gray-300 ml-2">
+          {user.role.toUpperCase()}
+        </span>
+      </h1>
+    </div>
           <Dialog>
             <DialogTrigger asChild>
-              <Button size="sm" className="mt-2">
-                Edit Profile
-              </Button>
+             <Button
+  size="sm"
+  className="mt-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 text-white rounded-full px-5 py-2 shadow-md hover:shadow-lg transition-all duration-300"
+>
+  Edit Profile
+</Button>
+
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
@@ -126,17 +132,20 @@ useEffect(() => {
 
         
               <DialogFooter>
-                <Button disabled={updateUserIsLoading} onClick={updateUserHandler}
-                >
-                  {updateUserIsLoading ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please
-                      wait
-                    </>
-                  ) : (
-                    "Save Changes"
-                  )}
-                </Button>
+              <Button
+  disabled={updateUserIsLoading}
+  onClick={updateUserHandler}
+  className="mt-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 text-white rounded-full px-5 py-2 shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-60"
+>
+  {updateUserIsLoading ? (
+    <>
+      <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
+    </>
+  ) : (
+    "Save Changes"
+  )}
+</Button>
+
 
               </DialogFooter>
             </DialogContent>
@@ -147,7 +156,11 @@ useEffect(() => {
     </div> 
 
     <div>
-        <h1 className="font-medium text-lg">Courses you're enrolled in</h1>
+
+        <h1 className="font-normal text-lg text-gray-800 dark:text-gray-100">
+  Courses you're enrolled in
+</h1>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-5">
           {user.enrolledCourses.length === 0 ? (
             <h1>You haven't enrolled yet</h1>

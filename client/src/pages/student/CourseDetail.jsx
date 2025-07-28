@@ -57,7 +57,7 @@ const CourseDetail = () => {
           <Card>
             <CardHeader>
                 <CardTitle>Course Content</CardTitle>
-                <CardDescription> 4 lectures </CardDescription>
+                <CardDescription> lectures </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
                 {course.lectures.map((lecture, idx) => (

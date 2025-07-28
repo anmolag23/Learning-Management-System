@@ -7,7 +7,10 @@ const MyLearning = () => {
     const MyLearning = data?.user.enrolledCourses || [];
   return (
       <div className="max-w-4xl mx-auto my-10 px-4 md:px-0">
-      <h1 className="font-bold text-2xl">MY LEARNING</h1>
+      <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-700 to-teal-600 drop-shadow-sm mb-6">
+  My Learning
+</h1>
+
       <div className='my-5'>
          {
          isLoading ? (

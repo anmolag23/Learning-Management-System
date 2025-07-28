@@ -19,6 +19,7 @@ import CourseProgress from './pages/student/CourseProgress'
 import SearchPage from './pages/student/SearchPage'
 import { AuthenticatedUser, ProtectedRoute, AdminRoute } from './components/ProtectedRoutes'
 import PurchaseCourseProtectedRoute from './components/PurchaseCourseProtectedRoute'
+import { ThemeProvider } from './components/ThemeProvider'
 
 
 
@@ -108,7 +109,10 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <main>
-        <RouterProvider router={appRouter}/>
+      <ThemeProvider>
+         <RouterProvider router={appRouter}/>
+      </ThemeProvider>
+      
     </main>
       
     
